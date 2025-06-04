@@ -75,41 +75,28 @@ cd ../ServerHost; swift run Server
 Open http://localhost:8080 in your browser to see the project running. Use the web interface to upload previously built
 `Guest` modules from the home directory.
 
-## License
+## Contributing to this example
+Contributions to Swift are welcomed and encouraged! Please see the
+[Contributing to Swift guide](https://swift.org/contributing/).
 
-Copyright 2024 Apple Inc. and the Swift project authors. Licensed under Apache License v2.0 with Runtime Library Exception.
+Before submitting the pull request, please make sure you have [tested your
+ changes](https://github.com/apple/swift/blob/main/docs/ContinuousIntegration.md)
+ and that they follow the Swift project [guidelines for contributing
+ code](https://swift.org/contributing/#contributing-code).
+
+To be a truly great community, [Swift.org](https://swift.org/) needs to welcome
+developers from all walks of life, with different backgrounds, and with a wide
+range of experience. A diverse and friendly community will have more great
+ideas, more unique perspectives, and produce more great code. We will work
+diligently to make the Swift community welcoming to everyone.
+
+To give clarity of what is expected of our members, Swift has adopted the
+code of conduct defined by the Contributor Covenant. This document is used
+across many open source communities, and we think it articulates our values
+well. For more, see the [Code of Conduct](https://swift.org/code-of-conduct/).
+
+## License
 
 See [https://swift.org/LICENSE.txt](https://swift.org/LICENSE.txt) for license information.
 
-See [https://swift.org/CONTRIBUTORS.txt](https://swift.org/CONTRIBUTORS.txt) for Swift project authors.
-
-See [`LICENSE-vendored.md`](https://github.com/apple/swift-for-wasm-examples/blob/main/LICENSE-vendored.md) for exact licenses of code vendored in this repository. Specifically:
-
-* Code in `Guest/Sources/dlmalloc` directory is derived from wasi-libc: https://github.com/WebAssembly/wasi-libc
-
-> wasi-libc as a whole is multi-licensed under the Apache License v2.0 with LLVM Exceptions, the Apache License v2.0, and the MIT License. See the LICENSE-APACHE-LLVM, LICENSE-APACHE and LICENSE-MIT files, respectively, for details.
->
-> Portions of this software are derived from third-party works covered by their own licenses:
->
-> dlmalloc/ - CC0; see the notice in malloc.c for details emmalloc/ - MIT; see the notice in emmalloc.c for details libc-bottom-half/cloudlibc/ - BSD-2-Clause; see the LICENSE file for details libc-top-half/musl/ - MIT; see the COPYRIGHT file for details
->
-> wasi-libc's changes to these files are multi-licensed under the Apache License v2.0 with LLVM Exceptions, the Apache License v2.0, the MIT License, and the original licenses of the third-party works.
-
-* .wav format encoding implementation is derived from WavAudioEncoder.js library https://github.com/higuma/wav-audio-encoder-js and is licensed as following:
-
-> The MIT License (MIT)
->
-> Copyright (c) 2015 Yuji Miyane
-
-* Code in `Guest/Sources/VultDSP` directory is derived from https://github.com/vult-dsp/vult and is licensed as following:
-
-> MIT License
->
-> Copyright (c) 2017 Leonardo Laguna Ruiz
-
-* Web server starter template code is derived from [the Hummingbird template package](https://github.com/hummingbird-project/template) and is licensed as following:
-
-> Copyright (c) 2024 Adam Fowler.
-> Licensed under Apache License v2.0.
->
-> See https://github.com/hummingbird-project/template/blob/main/LICENSE for license information
+See [`LICENSE-vendored.md`](https://github.com/apple/swift-for-wasm-examples/blob/main/LICENSE-vendored.md) for exact licenses of code vendored in this repository.
