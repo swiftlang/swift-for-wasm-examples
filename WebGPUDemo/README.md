@@ -16,8 +16,8 @@ WebGPU feature flag as shown on the screenshot:
 
 See [the WebGPU Implementation Status page](https://github.com/gpuweb/gpuweb/wiki/Implementation-Status) for information about compatibility with other browsers.
 
-Start a HTTP server with eg. `python -m http.server` or `npx serve`, then open
-http://localhost:8000 to view the Swift logo rendered using WebGPU.
+Start a HTTP server with eg. `python3 -m http.server` or `npx serve`, then open
+http://localhost:8000 for `python3` or http://localhost:3000 for `npx serve` to view the Swift logo rendered using WebGPU.
 
 > [!NOTE]
 > If using an editor with SourceKit-LSP, make sure to update `.sourcekit-lsp/config.json` with the
