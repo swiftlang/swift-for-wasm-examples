@@ -1,12 +1,12 @@
 # WebGPU Example
 
-Install a development snapshot and Swift SDK for Wasm by following
+Install Swift 6.2 development snapshot and Swift SDK for Wasm by following
 https://www.swift.org/documentation/articles/wasm-getting-started.html.
 
 Build with the installed Swift SDK using JavaScriptKit's `PackageToJSPlugin` plugin. Make sure to update
 the Swift SDK in the following command to the version that matches your installed swift.org toolchain.
 ```
-swift package --swift-sdk swift-DEVELOPMENT-SNAPSHOT-2025-06-03-a_wasm js --use-cdn
+swift package --swift-sdk swift-6.2-DEVELOPMENT-SNAPSHOT-2025-06-17-a_wasm js --use-cdn
 ```
 
 WebGPU requires a beta or technical preview version of Safari. For recent release versions make sure to enable
