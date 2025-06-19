@@ -1,4 +1,4 @@
-Guest/Sources/VultDSP/*.cpp linguist-generated
-Guest/Sources/VultDSP/*.h linguist-generated
-Guest/Sources/VultDSP/**/*.vult linguist-generated
-Guest/Sources/dlmalloc/** linguist-vendored
+AudioWorkstation/Guest/Sources/VultDSP/*.cpp linguist-generated
+AudioWorkstation/Guest/Sources/VultDSP/*.h linguist-generated
+AudioWorkstation/Guest/Sources/VultDSP/**/*.vult linguist-generated
+AudioWorkstation/Guest/Sources/dlmalloc/** linguist-vendored
