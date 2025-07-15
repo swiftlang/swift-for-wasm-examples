@@ -11,7 +11,7 @@ It is split into three packages: `Guest` with Wasm modules built with Embedded S
 
 ## Requirements
 
-WebAssembly support in Swift is available for preview in latest 6.2 Development snapshots at
+WebAssembly support in Swift is available for preview in Swift 6.2 development snapshots at
 [swift.org/download](https://www.swift.org/download). Follow instructions on that page for installing `swiftly` and run `swiftly install 6.2-snapshot` after that.
 
 ## How to Build and Run
