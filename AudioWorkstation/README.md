@@ -55,16 +55,20 @@ Assuming you're within the cloned repository and have the latest development sna
 above, first build the package:
 
 ```sh
-swift build --triple wasm32-unknown-none-wasm -c release --product swift-audio
+cd Guest
+./build.sh
 ```
+
+The script above will build Wasm audio plugins and copy resulting `.wasm` files to the user home directory.
 
 Then start the HTTP server:
 
 ```sh
-python3 -m http.server
+cd ../ServerHost
+swift run Server
 ```
 
-Open http://localhost:8000 in your browser to see the project running.
+Open http://localhost:8080 in your browser to see the web page, where you can load audio plugins built with the `build.sh` script in the previous step.
 
 ## License
 
