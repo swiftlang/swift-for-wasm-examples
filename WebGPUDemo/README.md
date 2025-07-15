@@ -16,7 +16,7 @@ WebGPU feature flag as shown on the screenshot:
 
 See [the WebGPU Implementation Status page](https://github.com/gpuweb/gpuweb/wiki/Implementation-Status) for information about compatibility with other browsers.
 
-Start an HTTP server that hosts the Wasm binary and other assets, e.g. you can use `python3 -m http.server` or `npx serve`, then open
+Start an HTTP server that hosts the Wasm binary and other assets included in the project, e.g. you can use `python3 -m http.server` or `npx serve`, then open
 http://localhost:8000 for `python3` or http://localhost:3000 for `npx serve` to view the Swift logo rendered using WebGPU.
 
 > [!NOTE]
