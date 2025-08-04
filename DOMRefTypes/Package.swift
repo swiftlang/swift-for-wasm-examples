@@ -17,8 +17,8 @@ import PackageDescription
 
 let linkerSettings: [LinkerSetting] = [
   .unsafeFlags([
-      "-Xclang-linker", "-mexec-model=reactor",
-      "-Xlinker", "--export-if-defined=__main_argc_argv",
+    "-Xclang-linker", "-mexec-model=reactor",
+    "-Xlinker", "--export-if-defined=__main_argc_argv",
   ]),
 ]
 
