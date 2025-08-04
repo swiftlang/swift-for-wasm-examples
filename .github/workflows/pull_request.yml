@@ -4,17 +4,9 @@ on:
   pull_request:
     types: [opened, reopened, synchronize]
 
-jobs:
-  tests:
-    name: Test
-    uses: swiftlang/github-workflows/.github/workflows/swift_package_test.yml@main
-    with:
-      linux_build_command: "cd AudioWorkstation/Guest && ./build.sh"
-      linux_exclude_swift_versions: '[{"swift_version": "5.9"}, {"swift_version": "5.10"}]'
-      enable_windows_checks: false
-      
-  wasm-sdk:
-    name: WebAssembly Swift SDK
+jobs: 
+  audio-workstation:
+    name: Build AudioWorkstation
     uses: swiftlang/github-workflows/.github/workflows/swift_package_test.yml@main
     with:
       enable_wasm_sdk_build: true
@@ -23,6 +15,16 @@ jobs:
       swift_flags: --package-path AudioWorkstation/Guest --product Plotter
       swift_nightly_flags: --package-path AudioWorkstation/Guest --product Plotter
 
+  webgpu-demo:
+    name: Build WebGPUDemo
+    uses: swiftlang/github-workflows/.github/workflows/swift_package_test.yml@main
+    with:
+      enable_wasm_sdk_build: true
+      enable_linux_checks: false
+      enable_windows_checks: false
+      swift_flags: --package-path WebGPUDemo
+      swift_nightly_flags: --package-path WebGPUDemo
+      
   soundness:
     name: Soundness
     uses: swiftlang/github-workflows/.github/workflows/soundness.yml@main
