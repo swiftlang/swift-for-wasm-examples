@@ -1,5 +1,5 @@
 {
-    "swiftPM": {
-        "swiftSDK": "swift-DEVELOPMENT-SNAPSHOT-2025-08-02-a_wasm-embedded"
-    }
+  "swiftPM": {
+    "swiftSDK": "swift-DEVELOPMENT-SNAPSHOT-2025-08-02-a_wasm-embedded"
+  }
 }
