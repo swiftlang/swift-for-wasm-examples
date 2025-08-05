@@ -42,7 +42,7 @@ struct JSString: ~Copyable {
 
 extension JSString {
   init(_ string: StaticString) {
-    self.ref = bridgeString(string.utf8Start, string.utf8CodeUnitCount)
+    self.ref = bridge(staticString: string)
   }
 
 }
@@ -82,4 +82,12 @@ struct Document: ~Copyable {
   var body: HTMLElement {
     HTMLElement(ref: getProp(self.object.ref, Self.bodyName.ref))
   }
+}
+
+private func bridge(staticString: StaticString) -> ExternRefIndex {
+  return bridgeString(staticString.utf8Start, staticString.utf8CodeUnitCount)
+}
+
+func fetch(_ url: StaticString) -> JSString {
+  JSString(ref: fetchURL(bridge(staticString: url)))
 }

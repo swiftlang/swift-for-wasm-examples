@@ -34,6 +34,7 @@ void appendChild(ExternRefIndex self, ExternRefIndex child);
 ExternRefIndex bridgeString(const uint8_t *str, size_t bytes);
 ExternRefIndex emptyArray(void);
 void arrayPush(ExternRefIndex self, ExternRefIndex element);
+ExternRefIndex fetchURL(ExternRefIndex url);
 
 #ifdef __cplusplus
 }

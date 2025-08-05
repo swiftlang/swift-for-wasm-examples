@@ -70,6 +70,10 @@ ExternRefIndex emptyArray() {
   return tableAppend(emptyArrayJS());
 }
 
+ExternRefIndex fetchURL(ExternRefIndex url) {
+  return tableAppend(fetchJS(__builtin_wasm_table_get(table, url.index)));
+}
+
 void arrayPush(ExternRefIndex self, ExternRefIndex element) {
   arrayPushJS(__builtin_wasm_table_get(table, self.index), __builtin_wasm_table_get(table, element.index));
 }

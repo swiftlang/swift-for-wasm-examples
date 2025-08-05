@@ -13,9 +13,9 @@
 @main
 struct Entrypoint {
   static func main() {
-    var h1 = Document.global.createElement(name: JSString("h1"))
+    var h1 = Document.global.createElement(name: JSString("pre"))
     let body = Document.global.body
     body.append(child: h1)
-    h1.innerHTML = JSString("Hello, world!")
+    h1.innerHTML = fetch("/Package.swift")
   }
 }

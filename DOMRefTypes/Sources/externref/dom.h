@@ -42,10 +42,13 @@ __attribute__((import_module("js")))
 __attribute__((import_name("getProp"))) __externref_t
 getPropJS(__externref_t self, __externref_t name);
 
-
 __attribute__((import_module("js")))
 __attribute__((import_name("getIntProp"))) int
 getIntPropJS(__externref_t self, __externref_t name);
+
+__attribute__((import_module("js")))
+__attribute__((import_name("fetch"))) __externref_t
+fetchJS(__externref_t url);
 
 __attribute__((import_module("document")))
 __attribute__((import_name("createElement"))) __externref_t

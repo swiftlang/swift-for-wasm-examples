@@ -31,6 +31,10 @@ const importsObject = {
       setProp: (self, name, val) => { self[name] = val; },
       getProp: (self, name) => self[name],
       getIntProp: (self, name) => self[name],
+      fetch: new WebAssembly.Suspending(async (url) => {
+        const response = await fetch(url);
+        return await response.text();
+      }),
     },
 
     document: {
@@ -45,4 +49,6 @@ const { instance, module } = await WebAssembly.instantiateStreaming(
 );
 moduleInstances.push(instance);
 
-instance.exports.__main_argc_argv();
+(async () => {
+  await WebAssembly.promising(instance.exports.__main_argc_argv)();
+})();
