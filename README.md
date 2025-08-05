@@ -7,9 +7,9 @@ A collection of example projects using Swift's support for [WebAssembly](https:/
 
 The repository is split into multiple subdirectories:
 
-- The [`AudioWorkstation` package](./AudioWorkstation) demonstrates use of
+- The [`AudioWorkstation`](./AudioWorkstation) package demonstrates use of
   WebAssembly for application plugins;
-- The [`WebGPUDemo` package](./WebGPUDemo) demonstrates use of WebAssembly
+- The [`WebGPUDemo`](./WebGPUDemo) package demonstrates use of WebAssembly
   in the browser, with Swift bindings to the [WebGPU](https://developer.apple.com/videos/play/wwdc2025/236) API.
 
 ## Contributing to this repository
