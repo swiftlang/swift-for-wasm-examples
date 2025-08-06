@@ -15,35 +15,6 @@
 
 import PackageDescription
 
-let embeddedSwiftSettings: [SwiftSetting] = [
-    .enableExperimentalFeature("Embedded"),
-    .enableExperimentalFeature("Extern"),
-    .interoperabilityMode(.Cxx),
-    .unsafeFlags(["-wmo", "-disable-cmo", "-Xfrontend", "-gnone", "-Xfrontend", "-disable-stack-protector"]),
-]
-
-let embeddedCSettings: [CSetting] = [
-    .unsafeFlags(["-fdeclspec"]),
-]
-
-let linkerSettings: [LinkerSetting] = [
-    .unsafeFlags([
-        "-Xclang-linker", "-nostdlib",
-        "-Xlinker", "--no-entry",
-    ]),
-]
-
-let libcSettings: [CSetting] = [
-    .define("LACKS_TIME_H"),
-    .define("LACKS_SYS_TYPES_H"),
-    .define("LACKS_STDLIB_H"),
-    .define("LACKS_STRING_H"),
-    .define("LACKS_SYS_MMAN_H"),
-    .define("LACKS_FCNTL_H"),
-    .define("NO_MALLOC_STATS", to: "1"),
-    .define("__wasilibc_unmodified_upstream"),
-]
-
 let package = Package(
     name: "Guest",
     targets: [
@@ -51,16 +22,9 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .executableTarget(
             name: "Plotter",
-            dependencies: ["dlmalloc"],
-            cSettings: embeddedCSettings,
-            swiftSettings: embeddedSwiftSettings,
-            linkerSettings: linkerSettings
+            swiftSettings: [.enableExperimentalFeature("Extern")]
         ),
         .target(name: "VultDSP"),
-        .target(
-            name: "dlmalloc",
-            cSettings: libcSettings
-        ),
     ]
 )
 
@@ -68,10 +32,8 @@ for module in ["Kick", "HiHat", "Bass", "Mix"] {
     package.targets.append(
         .executableTarget(
             name: module,
-            dependencies: ["VultDSP", "dlmalloc"],
-            cSettings: embeddedCSettings,
-            swiftSettings: embeddedSwiftSettings,
-            linkerSettings: linkerSettings
+            dependencies: ["VultDSP"],
+            swiftSettings: [.interoperabilityMode(.Cxx), .enableExperimentalFeature("Extern")]
         )
     )
 }
