@@ -8,3 +8,4 @@ Package.swift
 Package.resolved
 AudioWorkstation/**/*.vult
 WebGPUDemo/Resources/**/*
+AudioWorkstation/Guest/Sources/JavaScript/encoder.js
