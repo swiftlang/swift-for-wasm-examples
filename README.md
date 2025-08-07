@@ -11,6 +11,9 @@ The repository is split into multiple subdirectories:
   WebAssembly for application plugins;
 - The [`WebGPUDemo`](./WebGPUDemo) package demonstrates use of WebAssembly
   in the browser, with Swift bindings to the [WebGPU](https://developer.apple.com/videos/play/wwdc2025/236) API.
+- The [`DOMRefTypes`](./DOMRefTypes) package demonstrates use of WebAssembly
+  reference types for high performance bridging to DOM Web APIs. This specific
+  package is currently provided for advanced use cases only.
 
 ## Contributing to this repository
 
