@@ -7,5 +7,6 @@ Brewfile
 Package.swift
 Package.resolved
 AudioWorkstation/**/*.vult
+AudioWorkstation/ServerHost/Sources/Server/App*
 WebGPUDemo/Resources/**/*
 AudioWorkstation/Guest/Sources/JavaScript/encoder.js
