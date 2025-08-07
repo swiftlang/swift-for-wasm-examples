@@ -1,0 +1,10 @@
+.gitignore
+.swiftformat
+.swiftformatignore
+.editorconfig
+.unacceptablelanguageignore
+Brewfile
+Package.swift
+Package.resolved
+AudioWorkstation/**/*.vult
+WebGPUDemo/Resources/**/*
