@@ -8,7 +8,9 @@ Brewfile
 **/Package.resolved
 AudioWorkstation/**/*.vult
 AudioWorkstation/ServerHost/Sources/Server/App*
-WebGPUDemo/Resources/**/*
+AudioWorkstation/ServerHost/Tests/ServerTests/ServerTests.swift
 AudioWorkstation/Guest/Sources/JavaScript/encoder.js
+AudioWorkstation/Guest/Sources/VultDSP/**/*
+WebGPUDemo/Resources/**/*
 **/*.wgsl
 **/*.html
