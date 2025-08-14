@@ -11,7 +11,7 @@ let package = Package(
     ),
     .package(
       url: "https://github.com/swiftwasm/JavaScriptKit.git",
-      branch: "main",
+      branch: "yt/embedded-fix",
     ),
   ],
   targets: [
@@ -23,6 +23,11 @@ let package = Package(
         .product(name: "DOM", package: "WebAPIKit"),
         .product(name: "WebGPU", package: "WebAPIKit"),
       ],
+      swiftSettings: [
+        .unsafeFlags(["-Xllvm", "-sil-opt-pass-count=480377",
+        "-Xllvm", "-sil-print-last",
+        ])
+      ]
     )
   ]
 )

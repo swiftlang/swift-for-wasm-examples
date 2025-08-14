@@ -30,12 +30,14 @@ func fetchImageBitmap(url: String) async throws(JSException) -> ImageBitmap {
   )
 }
 
+typealias DefaultExecutorFactory = JavaScriptEventLoop
+
 @main
 struct Entrypoint {
-  static func main() {
-    JavaScriptEventLoop.installGlobalExecutor()
+  static func main() async {
+    // JavaScriptEventLoop.installGlobalExecutor()
     let gpu = Window.global.navigator.gpu
-    Task {
+    // Task {
       do throws(JSException) {
         let adapter = try await gpu.requestAdapter()!
         let device = try await adapter.requestDevice()
@@ -57,5 +59,5 @@ struct Entrypoint {
         console.error(data: error.thrownValue)
       }
     }
-  }
+  // }
 }
