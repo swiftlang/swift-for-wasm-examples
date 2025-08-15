@@ -1,13 +1,13 @@
 {
-  "originHash" : "78d4c78903f08d936d36ab5b76f8b1098413d1b183a55c2f385b3f32a7b53682",
+  "originHash" : "8b1d9dc30426eb64ddd75cf52781d1b481727ea88d6e78f3147f650919d2e2a6",
   "pins" : [
     {
       "identity" : "javascriptkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swiftwasm/JavaScriptKit.git",
       "state" : {
-        "branch" : "yt/embedded-fix",
-        "revision" : "a2c2963f1e730be63398f24b7d1ac52ddf6cce17"
+        "revision" : "7510b04120bb26a25dd287af71de47065d577c7e",
+        "version" : "0.33.1"
       }
     },
     {
