@@ -9,6 +9,16 @@ the Swift SDK in the following command to the version that matches your installe
 swift package --swift-sdk swift-6.2-DEVELOPMENT-SNAPSHOT-2025-06-17-a_wasm js --use-cdn
 ```
 
+If you'd like to produce a smaller binary (under 400 kB), you'll have to use
+`swift-DEVELOPMENT-SNAPSHOT-2025-08-11` or later development snapshot of the `main` Swift toolchain
+branch. Earlier versions (including Swift 6.2) have no support for `async` functions in Embedded Swift,
+which is required for WebGPU setup. Use the following command to build with Embedded Swift (update for
+your installed toolchain version if needed):
+
+```
+swift package --swift-sdk swift-DEVELOPMENT-SNAPSHOT-2025-08-11-a_wasm-embedded js --use-cdn -c release
+```
+
 WebGPU is enabled by default in beta and technical preview versions of Safari. Safari 17 and 18 require enabling
 WebGPU feature flag as shown on the screenshot:
 
