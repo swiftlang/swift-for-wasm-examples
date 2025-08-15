@@ -11,7 +11,7 @@ let package = Package(
     ),
     .package(
       url: "https://github.com/swiftwasm/JavaScriptKit.git",
-      branch: "main",
+      branch: "yt/embedded-fix",
     ),
   ],
   targets: [

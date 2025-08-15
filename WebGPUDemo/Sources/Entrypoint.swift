@@ -30,32 +30,33 @@ func fetchImageBitmap(url: String) async throws(JSException) -> ImageBitmap {
   )
 }
 
+typealias DefaultExecutorFactory = JavaScriptEventLoop
+
 @main
 struct Entrypoint {
-  static func main() {
-    JavaScriptEventLoop.installGlobalExecutor()
+  static func main() async {
     let gpu = Window.global.navigator.gpu
-    Task {
-      do throws(JSException) {
-        let adapter = try await gpu.requestAdapter()!
-        let device = try await adapter.requestDevice()
 
-        let renderer = try await Renderer(
-          device: device,
-          gpu: gpu,
-          assets: .init(
-            shaders: fetchString(url: "Resources/shaders.wgsl"),
-            model: fetchString(url: "Resources/SwiftLogo/Swift3DLogo.obj"),
-            albedo: fetchImageBitmap(url: "Resources/SwiftLogo/T_M_swiftLogo_BaseColor.png"),
-            normal: fetchImageBitmap(url: "Resources/SwiftLogo/T_M_swiftLogo_Normal.png"),
-            metalRoughness: fetchImageBitmap(url: "Resources/SwiftLogo/T_M_swiftLogo_MetalRoughness.png"),
-          ),
-        )
+    do throws(JSException) {
+      let adapterPromise: JSPromise = gpu.requestAdapter()
+      let devicePromise = JSPromise(from: try await adapterPromise.value().requestDevice())!
+      let device = try await GPUDevice(unsafelyWrapping: devicePromise.value().object!)
 
-        draw(renderer: renderer)
-      } catch {
-        console.error(data: error.thrownValue)
-      }
+      let renderer = try await Renderer(
+        device: device,
+        gpu: gpu,
+        assets: .init(
+          shaders: fetchString(url: "Resources/shaders.wgsl"),
+          model: fetchString(url: "Resources/SwiftLogo/Swift3DLogo.obj"),
+          albedo: fetchImageBitmap(url: "Resources/SwiftLogo/T_M_swiftLogo_BaseColor.png"),
+          normal: fetchImageBitmap(url: "Resources/SwiftLogo/T_M_swiftLogo_Normal.png"),
+          metalRoughness: fetchImageBitmap(url: "Resources/SwiftLogo/T_M_swiftLogo_MetalRoughness.png"),
+        ),
+      )
+
+      draw(renderer: renderer)
+    } catch {
+      console.error(data: error.thrownValue)
     }
   }
 }
