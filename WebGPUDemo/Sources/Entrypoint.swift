@@ -38,6 +38,7 @@ struct Entrypoint {
     let gpu = Window.global.navigator.gpu
 
     do throws(JSException) {
+      // Using promises instead of `async` functions due to https://github.com/swiftlang/swift/issues/83750
       let adapterPromise: JSPromise = gpu.requestAdapter()
       let devicePromise = JSPromise(from: try await adapterPromise.value().requestDevice())!
       let device = try await GPUDevice(unsafelyWrapping: devicePromise.value().object!)
