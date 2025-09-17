@@ -1,12 +1,12 @@
 # WebGPU Example
 
-Install Swift 6.2 development snapshot and Swift SDK for Wasm by following
-https://www.swift.org/documentation/articles/wasm-getting-started.html.
+Install Swift 6.2 (or later version) and a corresponding Swift SDK for Wasm by following
+["Getting Started with Swift SDKs for WebAssembly" article](https://www.swift.org/documentation/articles/wasm-getting-started.html).
 
 Build with the installed Swift SDK using JavaScriptKit's `PackageToJSPlugin` plugin. Make sure to update
-the Swift SDK in the following command to the version that matches your installed swift.org toolchain.
+the Swift SDK in the following command to the version that matches your installed Swift toolchain.
 ```
-swift package --swift-sdk swift-6.2-DEVELOPMENT-SNAPSHOT-2025-06-17-a_wasm js --use-cdn
+swift package --swift-sdk swift-6.2-RELEASE_wasm js --use-cdn
 ```
 
 If you'd like to produce a smaller binary (under 400 kB), you'll have to use
@@ -19,7 +19,7 @@ your installed toolchain version if needed):
 swift package --swift-sdk swift-DEVELOPMENT-SNAPSHOT-2025-08-11-a_wasm-embedded js --use-cdn -c release
 ```
 
-WebGPU is enabled by default in beta and technical preview versions of Safari. Safari 17 and 18 require enabling
+WebGPU is enabled by default in Safari 26. Safari 17 and 18 require enabling
 WebGPU feature flag as shown on the screenshot:
 
 <img width="833" alt="Safari Feature Flags settings tab with WebGPU enabled" src="https://github.com/user-attachments/assets/7d0453ab-da51-4a6e-85da-dc466cf775be" />
