@@ -11,7 +11,7 @@ let package = Package(
     ),
     .package(
       url: "https://github.com/swiftwasm/JavaScriptKit.git",
-      from: "0.33.1",
+      revision: "0b785610d170a0cbb4777ea379cb7221fc82c401",
     ),
   ],
   targets: [

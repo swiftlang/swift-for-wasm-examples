@@ -1,13 +1,12 @@
 {
-  "originHash" : "8b1d9dc30426eb64ddd75cf52781d1b481727ea88d6e78f3147f650919d2e2a6",
+  "originHash" : "76c1e4088705907beec839fa123b640884ec89a62e0a63341defa9bd1abbd692",
   "pins" : [
     {
       "identity" : "javascriptkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swiftwasm/JavaScriptKit.git",
       "state" : {
-        "revision" : "7510b04120bb26a25dd287af71de47065d577c7e",
-        "version" : "0.33.1"
+        "revision" : "0b785610d170a0cbb4777ea379cb7221fc82c401"
       }
     },
     {
