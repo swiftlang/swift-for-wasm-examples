@@ -8,7 +8,7 @@ If you need multi-threading support, please see [Multithreading guide](<doc:Mult
 ## Cooperative Task Executor
 
 `Cooperative Task Executor` is the default task executor when targeting Wasm. It is a simple single-threaded
-cooperative task executor implemented in [Swift Concurrency library](https://github.com/apple/swift/blob/0c67ce64874d83b2d4f8d73b899ee58f2a75527f/stdlib/public/Concurrency/CooperativeGlobalExecutor.inc).
+cooperative task executor implemented in [Swift Concurrency library](https://github.com/swiftlang/swift/blob/0c67ce64874d83b2d4f8d73b899ee58f2a75527f/stdlib/public/Concurrency/CooperativeGlobalExecutor.inc).
 If you are not familiar with the term "Cooperative" in the context of concurrent programming, see [its definition for more details](https://en.wikipedia.org/wiki/Cooperative_multitasking).
 
 This executor has an *event loop* that dispatches tasks until no more tasks are enqueued, and exits immediately after all tasks are dispatched.
