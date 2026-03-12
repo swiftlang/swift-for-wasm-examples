@@ -27,9 +27,9 @@ $ swift run --swift-sdk "$(swiftc -print-target-info | jq -r '.swiftCompilerTag'
 
 ### `WebWorkerTaskExecutor` - multi-threading in the browser
 
-For browser use cases JavaScriptKit provides `WebWorkerTaskExecutor`, a [`TaskExecutor`](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0417-task-executor-preference.md) implementation that runs `Task`s in a Web Worker. This allows you to run Swift code concurrently in a Web Worker sharing the same memory space.
+For browser use cases JavaScriptKit provides `WebWorkerTaskExecutor`, a [`TaskExecutor`](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0417-task-executor-preference.md) implementation that runs tasks in a Web Worker. This allows you to run Swift code concurrently in a Web Worker sharing the same memory space.
 
-This feature is available when you use `wasm32-unknown-wasip1-threads` target and [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) for sharing Wasm linear memory between instantiated Wasm threads.
+This feature is available when you use the `wasm32-unknown-wasip1-threads` target and [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) for sharing Wasm linear memory between instantiated Wasm threads.
 
 See more details in the following links:
 

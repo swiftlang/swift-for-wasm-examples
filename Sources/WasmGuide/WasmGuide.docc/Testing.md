@@ -16,7 +16,7 @@ If you prefer to run tests in a standalone environment without JavaScript, you c
 
 Make sure your `Package.swift` has test targets configured. For example:
 
-Note that `swift test` is supported for WebAssembly targets only in development snapshots of the Swift toolchain. Building tests and running them are two separate steps in Swift 6.2, but with that version of Swift after building your tests, you can use a WASI-compatible host such as [WasmKit](https://github.com/swiftwasm/WasmKit) to run the test bundle.
+Note that `swift test` is supported for WebAssembly targets only in development snapshots of the Swift toolchain. Building tests and running them are two separate steps in Swift 6.2. but after building your tests, you can use a WASI-compatible host such as [WasmKit](https://github.com/swiftwasm/WasmKit) to run the test bundle.
 
 Ensure that you have a `.testTarget` defined in your `Package.swift`:
 
@@ -40,8 +40,8 @@ swift test --swift-sdk "$(swiftc -print-target-info | jq -r '.swiftCompilerTag')
 
 ### Swift 6.2
 
-In Swift 6.2 `swift test` doesn't know what WebAssembly environment you'd like to use
-to run your tests, building tests and running them are two separate steps. To
+In Swift 6.2, `swift test` doesn't know what WebAssembly environment you'd like to use
+to run your tests; building tests and running them are two separate steps. To
 build tests for WebAssembly, use the following command:
 
 ```sh
@@ -71,7 +71,7 @@ wasmkit run .build/debug/{YOURPACKAGE}PackageTests.wasm --testing-library swift-
 ### Code coverage
 
 You can also generate code coverage reports for your test suite when using development snapshots of the toolchain (not supported in Swift 6.2).
-To do this, you need to build your test suite with the `--enable-code-coverage` and linker options `-Xlinker -lwasi-emulated-getpid`:
+To do this, you need to build your test suite with the `--enable-code-coverage` flag and the linker options `-Xlinker -lwasi-emulated-getpid`:
 
 ```sh
 $ swift build --build-tests --swift-sdk $SWIFT_SDK_ID --enable-code-coverage -Xlinker -lwasi-emulated-getpid

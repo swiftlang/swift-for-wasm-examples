@@ -37,17 +37,17 @@ This executor also has its own *event loop* that dispatches tasks until no more 
 It yields control to the JavaScript side after all pending tasks are dispatched, so the JavaScript program can call back to the executed Wasm module.
 After a task is resumed by callbacks from JavaScript, the executor starts its event loop again in the next microtask tick.
 
-To enable this executor, you need to use `JavaScriptEventLoop` module, which is provided as a part of `JavaScriptKit` package.
+To enable this executor, you need to use the `JavaScriptEventLoop` module, which is provided as a part of `JavaScriptKit` package.
 
-0. Ensure that you have added `JavaScriptKit` dependency to your `Package.swift`
-1. Add `JavaScriptEventLoop` dependency to your targets that use this executor
+1. Ensure that you have added `JavaScriptKit` dependency to your `Package.swift`
+2. Add `JavaScriptEventLoop` dependency to your targets that use this executor
 
 ```swift
 .product(name: "JavaScriptEventLoop", package: "JavaScriptKit"),
 ```
-2. Import `JavaScriptEventLoop` and call `JavaScriptEventLoop.installGlobalExecutor()` before spawning any tasks to activate the executor instead of the default cooperative executor.
+3. Import `JavaScriptEventLoop` and call `JavaScriptEventLoop.installGlobalExecutor()` before spawning any tasks to activate the executor instead of the default cooperative executor.
 
-Note that this executor is only available on JavaScript host environment.
+This executor is only available on JavaScript host environment.
 
 See also [`JavaScriptKit` documentation](https://github.com/swiftwasm/JavaScriptKit/#asyncawait) for more details.
 

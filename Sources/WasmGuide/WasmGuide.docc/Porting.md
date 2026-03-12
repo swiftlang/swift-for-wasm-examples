@@ -73,9 +73,6 @@ and they had to be disabled. These types are therefore absent in Foundation for 
 | `Timer` | ❌ Unavailable |
 | `UserDefaults` | ✅ Available after 6.0 |
 
-Related functions and properties on other types are also absent or disabled. We would like to make
-them available in the future as soon as possible, and [we invite you to
-contribute](../contribution-guide/index.md) and help us in achieving this goal!
 
 ## Swift Testing
 
