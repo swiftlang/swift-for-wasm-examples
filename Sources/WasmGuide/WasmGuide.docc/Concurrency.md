@@ -1,6 +1,6 @@
 # Concurrency
 
-On macOS, iOS, and Linux, `libdispatch`-based executor is used by default, but `libdispatch` is not supported in a single-threaded WebAssembly environment.
+On macOS, iOS, and Linux, the `libdispatch`-based executor is used by default, but `libdispatch` is not supported in a single-threaded WebAssembly environment.
 However, there are still two global task executors available in Swift for Wasm.
 
 If you need multi-threading support, please see [Multithreading guide](<doc:Multithreading>) for more details.
