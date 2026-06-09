@@ -12,7 +12,7 @@
 
 import JavaScriptKit
 
-// The static Swift type that the parsed JSON object's fields map onto. Each `@JSGetter`
+// The Swift type that the parsed JSON object's fields map onto. Each `@JSGetter`
 // reads a property off the underlying JavaScript object as a statically typed Swift value.
 @JSClass
 struct User {
