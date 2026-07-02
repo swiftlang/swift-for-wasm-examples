@@ -1,6 +1,6 @@
 # ``WasmGuide``
 
-Run Swift in the browser and beyond: interoperate with JavaScript, port existing code, and handle concurrency.
+Run Swift in the browser and beyond: interoperate with JavaScript and port existing code.
 
 @Metadata {
     @DisplayName("Swift for WebAssembly")
