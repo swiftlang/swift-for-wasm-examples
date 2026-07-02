@@ -1,6 +1,10 @@
-# Swift for WebAssembly Guide
+# ``WasmGuide``
 
-This guide explores advanced topics for developing WebAssembly applications with Swift.
+Run Swift in the browser and beyond: interoperate with JavaScript and port existing code.
+
+@Metadata {
+    @DisplayName("Swift for WebAssembly")
+}
 
 For initial setup, building your first application, and editor configuration, please
 refer to the official [Getting Started with Swift SDKs for WebAssembly](https://www.swift.org/documentation/articles/wasm-getting-started.html) article on Swift.org.
