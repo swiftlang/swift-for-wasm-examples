@@ -3,7 +3,8 @@
 Run Swift in the browser and beyond: interoperate with JavaScript and port existing code.
 
 @Metadata {
-    @DisplayName("Swift for WebAssembly")
+    @DisplayName("WebAssembly (Wasm)")
+    @TitleHeading("Platforms")
 }
 
 For initial setup, building your first application, and editor configuration, please
