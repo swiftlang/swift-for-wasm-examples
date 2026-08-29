@@ -54,4 +54,4 @@ jobs:
       unacceptable_language_check_enabled: true
       license_header_check_enabled: false
       broken_symlink_check_enabled: true
-      format_check_enabled: false
+      format_check_enabled: true
